@@ -18,18 +18,29 @@ words_by_level = {
 
 print("Selamat datang di Game Bahasa Spanyol!")
 print("Kamu akan diminta untuk merekam kata-kata random dalam bahasa Indonesia yang harus kamu terjemahkan ke dalam bahasa Spanyol. Semaking tinggi levelnya, semakin sulit kata-katanya.")
-print("Kamu memiliki 3 nyawa dalam game ini, kalau kamu menjawab salah ❤️ ❤️ ❤️ , nyawa kamu berkurang 1. ➖")
+print("Kamu memiliki 3 nyawa dalam game ini, kalau kamu menjawab salah ❤️  ❤️  ❤️ , nyawa kamu berkurang 1. ➖")
 print("Kamu bisa keluar dari game ini dengan mengetik 'exit'. ➜]")
 print("Ayo mulai bermain! 🎉")
 
 point = 0
 health = 3
 
+def badge(score):
+    if score >= 5:
+        return "Beginner Translator 🥉"
+    elif score >= 10:
+        return "Intermediate Translator 🥈"
+    elif score >= 15:
+        return "Advanced Translator 🥇"
+    else:
+        return "🎖️"
+
 while True:
     print("\nPilih level kesulitan: (mudah🟢/sedang🟡/sulit🔴)")
     level = input(">>>")
     if level =='exit':
         print("⭐️ Point akhir kamu adalah:", point)
+        print("🏅 Badge yang kamu dapatkan:", badge(point))
         print("🙏 Terima kasih telah bermain! Sampai jumpa lagi!")
         break
     word = random.choice(words_by_level.get(level, words_by_level["mudah"]))
