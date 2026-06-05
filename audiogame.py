@@ -25,6 +25,9 @@ print("Ayo mulai bermain! 🎉")
 point = 0
 health = 3
 
+def show_health(health):
+    return "❤️ " * health + "🤍 " * (3 - health)
+
 def badge(score):
     if score >= 5:
         return "Beginner Translator 🥉"
@@ -74,8 +77,10 @@ while True:
         else:
             health -= 1
             print(f"Maaf, jawaban kamu salah. ❌ Coba lagi! Nyawa kamu: {health}")
+            print(show_health(health))
             if health == 0:
                 print("Game Over! 😢")
+                print(show_health(health))
                 print("⭐️ Point akhir kamu adalah:", point)
                 print("🙏 Terima kasih telah bermain! Sampai jumpa lagi!")
                 break
