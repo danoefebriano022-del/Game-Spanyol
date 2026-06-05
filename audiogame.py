@@ -82,6 +82,7 @@ while True:
                 print("Game Over! 😢")
                 print(show_health(health))
                 print("⭐️ Point akhir kamu adalah:", point)
+                print("🏅 Badge yang kamu dapatkan:", badge(point))
                 print("🙏 Terima kasih telah bermain! Sampai jumpa lagi!")
                 break
     except sr.UnknownValueError:
